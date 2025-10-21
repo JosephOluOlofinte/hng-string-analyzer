@@ -18,9 +18,7 @@ export const addString = async (req: Request, res: Response) => {
 
     const existing = jsonStore.getById(id);
     if (existing) {
-      return res
-        .status(409)
-        .json({ error: 'String already exists in the system' });
+      return res.status(409).json({ error: 'String already exists in the system' });
     }
 
     const record = {

@@ -27,13 +27,6 @@ app.use(express.json());
 
 
 // routes
-app.get('/', (req: Request, res: Response) => {
-    res.status(200).json({
-        status: 'success',
-        message: 'Welcome to Joseph\'s String Analyzer API. Your connectiong is healthy!'
-    })
-})
-
 app.use('/strings', stringRoutes)
 app.use((req: Request, res: Response) => {
     res.status(404).json({
