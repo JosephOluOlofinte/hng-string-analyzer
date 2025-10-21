@@ -7,8 +7,7 @@
     "dev": "nodemon",
     "build": "npm install & tsc",
     "start": "node index.js",
-    "lint": "eslint . --ext .ts",
-    "test": "jest --runInBand --detectOpenHandles"
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "Joseph Olofinte",

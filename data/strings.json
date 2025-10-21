@@ -1,0 +1,68 @@
+[
+  {
+    "id": "78675cc176081372c43abab3ea9fb70c74381eb02dc6e93fb6d44d161da6eeb3",
+    "value": "Joe",
+    "properties": {
+      "length": 3,
+      "is_palindrome": false,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "78675cc176081372c43abab3ea9fb70c74381eb02dc6e93fb6d44d161da6eeb3",
+      "character_frequency_map": {
+        "j": 1,
+        "o": 1,
+        "e": 1
+      }
+    },
+    "created_at": "2025-10-21T17:37:08.243Z"
+  },
+  {
+    "id": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+    "value": "a",
+    "properties": {
+      "length": 1,
+      "is_palindrome": true,
+      "unique_characters": 1,
+      "word_count": 1,
+      "sha256_hash": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+      "character_frequency_map": {
+        "a": 1
+      }
+    },
+    "created_at": "2025-10-21T17:44:58.254Z"
+  },
+  {
+    "id": "676cb75018edccf10fce6f376f2124e02c3293fa3fe8f953c75386198c714514",
+    "value": "Zebra",
+    "properties": {
+      "length": 5,
+      "is_palindrome": false,
+      "unique_characters": 5,
+      "word_count": 1,
+      "sha256_hash": "676cb75018edccf10fce6f376f2124e02c3293fa3fe8f953c75386198c714514",
+      "character_frequency_map": {
+        "z": 1,
+        "e": 1,
+        "b": 1,
+        "r": 1,
+        "a": 1
+      }
+    },
+    "created_at": "2025-10-21T18:59:48.281Z"
+  },
+  {
+    "id": "de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7",
+    "value": "I",
+    "properties": {
+      "length": 1,
+      "is_palindrome": true,
+      "unique_characters": 1,
+      "word_count": 1,
+      "sha256_hash": "de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7",
+      "character_frequency_map": {
+        "i": 1
+      }
+    },
+    "created_at": "2025-10-21T19:02:24.154Z"
+  }
+]

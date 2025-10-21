@@ -6,6 +6,7 @@ import logger from 'morgan';
 import rateLimit from 'express-rate-limit';
 import bodyParser from 'body-parser';
 import { PORT } from './constants/env';
+import stringRoutes from './routers/strings.router';
 
 const app = express();
 const requestLimit = rateLimit({
@@ -30,11 +31,11 @@ app.use(bodyParser.json());
 app.get('/', (req: Request, res: Response) => {
     res.status(200).json({
         status: 'success',
-        message: 'Welcome to the String Analyzer API. '
+        message: 'Welcome to Joseph\'s String Analyzer API. Your connectiong is healthy!'
     })
 })
 
-app.use('/strings',)
+app.use('/strings', stringRoutes)
 app.use((req: Request, res: Response) => {
     res.status(404).json({
         error: "Not Found"
