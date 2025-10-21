@@ -4,7 +4,6 @@ import express, { Request, Response } from 'express'
 import cors from 'cors';
 import logger from 'morgan';
 import rateLimit from 'express-rate-limit';
-import bodyParser from 'body-parser';
 import { PORT } from './constants/env';
 import stringRoutes from './routers/strings.router';
 
@@ -24,7 +23,7 @@ const requestLimit = rateLimit({
 app.use(logger('combined'));
 app.use(cors());
 app.use(requestLimit)
-app.use(bodyParser.json());
+app.use(express.json());
 
 
 // routes

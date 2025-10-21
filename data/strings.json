@@ -64,5 +64,87 @@
       }
     },
     "created_at": "2025-10-21T19:02:24.154Z"
+  },
+  {
+    "id": "1ad421452875d7cc12bd134ba46507ada13d983b6a7761690c0a572a3758ed5a",
+    "value": "Joes",
+    "properties": {
+      "length": 4,
+      "is_palindrome": false,
+      "unique_characters": 4,
+      "word_count": 1,
+      "sha256_hash": "1ad421452875d7cc12bd134ba46507ada13d983b6a7761690c0a572a3758ed5a",
+      "character_frequency_map": {
+        "j": 1,
+        "o": 1,
+        "e": 1,
+        "s": 1
+      }
+    },
+    "created_at": "2025-10-21T20:19:08.970Z"
+  },
+  {
+    "id": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "value": "",
+    "properties": {
+      "length": 0,
+      "is_palindrome": true,
+      "unique_characters": 0,
+      "word_count": 0,
+      "sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "character_frequency_map": {}
+    },
+    "created_at": "2025-10-21T20:20:18.327Z"
+  },
+  {
+    "id": "0081779c287d567d9ca622f4c0cc2ede819b0cc7f286a5f01d8c3c0178191ad6",
+    "value": "level",
+    "properties": {
+      "length": 5,
+      "is_palindrome": true,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "0081779c287d567d9ca622f4c0cc2ede819b0cc7f286a5f01d8c3c0178191ad6",
+      "character_frequency_map": {
+        "l": 2,
+        "e": 2,
+        "v": 1
+      }
+    },
+    "created_at": "2025-10-21T20:24:00.158Z"
+  },
+  {
+    "id": "765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21",
+    "value": "madam",
+    "properties": {
+      "length": 5,
+      "is_palindrome": true,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21",
+      "character_frequency_map": {
+        "m": 2,
+        "a": 2,
+        "d": 1
+      }
+    },
+    "created_at": "2025-10-21T20:28:29.936Z"
+  },
+  {
+    "id": "fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832",
+    "value": "hannah",
+    "properties": {
+      "length": 6,
+      "is_palindrome": true,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832",
+      "character_frequency_map": {
+        "h": 2,
+        "a": 2,
+        "n": 2
+      }
+    },
+    "created_at": "2025-10-21T20:28:42.189Z"
   }
 ]

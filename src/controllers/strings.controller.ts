@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import analyzer from "../services/analyzer";
 import nlParser from "../services/nlParser";
-import jsonStore from "../store/jsonStore";
+import jsonStore from "../json_store/jsonStore";
 
 
 export const addString = async (req: Request, res: Response) => {
@@ -201,7 +201,9 @@ export const getStringByNaturalLanguage = (req: Request, res: Response) => {
 }
 
 export const deleteString = (req: Request, res: Response) => {
-    const stringValue = decodeURIComponent(req.params.stringValue);
+    const string_value = decodeURIComponent(req.params.string_value);
+    const stringValue = string_value.toLowerCase();
+    console.log(stringValue)
     const id = analyzer.sha256(stringValue);
     const existing = jsonStore.getById(id);
     if (!existing) {
