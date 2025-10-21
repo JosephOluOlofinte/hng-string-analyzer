@@ -22,9 +22,7 @@ Simple RESTful API that analyzes strings and stores computed properties.
 ---
 
 ## Folder Structure
-- data
-- │ └── strings.json
-- src/
+- app/
 - ├── constants/
 - │ └── env.ts
 - ├── controllers/
@@ -37,6 +35,8 @@ Simple RESTful API that analyzes strings and stores computed properties.
 - │ └── analyzer.ts 
 - │ └── nlParser.ts 
 - ├── index.ts 
+- data
+- │ └── strings.json
 - .gitignore
 - package-lock.json 
 - package.json 
@@ -74,15 +74,14 @@ npm start
 ---
 
 ## Dependencies
-
-### 1. Express
-### 2. Cors
-### 3. Typescript
-### 4. Morgan
-### 5. Express Rate Limit 
-### 6. Dot Env
-### 7. TS Node
-### 8. Nodemon
+1. Express
+2. Cors
+3. Typescript
+4. Morgan
+5. Express Rate Limit 
+6. Dot Env
+7. TS Node
+8. Nodemon
 
 ### How To Install Dependencies
 ```bash
@@ -117,7 +116,7 @@ POST /strings
 #### Request Format
 ```json
 {
-  "value": "string"
+  "value": "hannah"
 }
 ```
 
@@ -125,22 +124,21 @@ POST /strings
 ##### Success Response
 ```json
 {
-  "id": "sha256_hash_value",
-  "value": "string",
-  "properties": {
-    "length": 17,
-    "is_palindrome": false,
-    "unique_characters": 12,
-    "word_count": 3,
-    "sha256_hash": "abc123...",
-    "character_frequency_map": {
-      "s": 2,
-      "t": 3,
-      "r": 2,
-      // ... etc
-    }
-  },
-  "created_at": "2025-08-27T10:00:00Z"
+    "id": "fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832",
+    "value": "hannah",
+    "properties": {
+        "length": 6,
+        "is_palindrome": true,
+        "unique_characters": 3,
+        "word_count": 1,
+        "sha256_hash": "fc881aa34d44660e1012dec26ccda0b469d6c8359e91dc674dab4c095b9fe832",
+        "character_frequency_map": {
+            "h": 2,
+            "a": 2,
+            "n": 2
+        }
+    },
+    "created_at": "2025-10-21T20:28:42.189Z"
 }
 ```
 

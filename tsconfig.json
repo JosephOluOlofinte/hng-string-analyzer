@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "rootDir": "src",
+    "rootDir": "app",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,5 +12,5 @@
     "noImplicitAny": false
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*"]
+  "include": ["app/**/*"]
 }

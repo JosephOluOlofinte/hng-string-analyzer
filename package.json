@@ -2,7 +2,7 @@
   "name": "hng-string-analyzer",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./app/index.ts",
   "scripts": {
     "dev": "nodemon",
     "build": "npm install & tsc",
