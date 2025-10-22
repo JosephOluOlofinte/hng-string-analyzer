@@ -9,6 +9,7 @@ import stringRoutes from './routers/strings.router';
 import mongoose from 'mongoose';
 
 // connect to db
+console.log('Mongo URI:', process.env.MONGODB_URI);
 mongoose.connect(MONGODB_URI).then(() => {
   console.log('Connected to db successfully');
 });
