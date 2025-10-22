@@ -70,28 +70,28 @@ export const getFilteredString = async (req: Request, res: Response) => {
   const filters: any = {};
   if (is_palindrome !== undefined) {
     if (is_palindrome !== 'true' && is_palindrome !== 'false') {
-      return res.status(400).json({ error: 'is_palindrome must be true or false' });
+      return res.status(400).json({ error: 'Invalid query parameter values or types' });
     }
     filters.is_palindrome = is_palindrome === 'true';
   }
   if (min_length !== undefined) {
     const v = Number(min_length);
     if (!Number.isInteger(v) || v < 0) {
-      return res.status(400).json({ error: 'min_length must be a non-negative integer' });
+      return res.status(400).json({ error: 'Invalid query parameter values or types' });
     }
     filters.min_length = v;
   }
   if (max_length !== undefined) {
     const v = Number(max_length);
     if (!Number.isInteger(v) || v < 0) {
-      return res.status(400).json({ error: 'max_length must be a non-negative integer' });
+      return res.status(400).json({ error: 'Invalid query parameter values or types' });
     }
     filters.max_length = v;
   }
   if (word_count !== undefined) {
     const v = Number(word_count);
     if (!Number.isInteger(v) || v < 0) {
-      return res.status(400).json({ error: 'word_count must be a non-negative integer' });
+      return res.status(400).json({ error: 'Invalid query parameter values or types' });
     }
     filters.word_count = v;
   }
@@ -101,7 +101,7 @@ export const getFilteredString = async (req: Request, res: Response) => {
       contains_character.length !== 1
     ) {
       return res.status(400).json({
-        error: 'contains_character must be a single character string',
+        error: 'Invalid query parameter values or types',
       });
     }
     filters.contains_character = contains_character;

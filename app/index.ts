@@ -33,12 +33,7 @@ app.use(express.json());
 
 
 // routes
-app.use('/strings', stringRoutes)
-app.use((req: Request, res: Response) => {
-    res.status(404).json({
-        error: "Not Found"
-    })
-})
+app.use('/', stringRoutes)
 
 // listen to port
 app.listen(PORT, () => {
