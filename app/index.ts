@@ -4,8 +4,14 @@ import express, { Request, Response } from 'express'
 import cors from 'cors';
 import logger from 'morgan';
 import rateLimit from 'express-rate-limit';
-import { PORT } from './constants/env';
+import { MONGODB_URI, PORT } from './constants/env';
 import stringRoutes from './routers/strings.router';
+import mongoose from 'mongoose';
+
+// connect to db
+mongoose.connect(MONGODB_URI).then(() => {
+  console.log('Connected to db successfully');
+});
 
 const app = express();
 const requestLimit = rateLimit({

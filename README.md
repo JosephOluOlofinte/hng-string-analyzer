@@ -17,7 +17,6 @@ Simple RESTful API that analyzes strings and stores computed properties.
   - GET /strings with filters
   - GET /strings/filter-by-natural-language?query=...
   - DELETE /strings/:string_value
-- JSON file persistence in `data/strings.json`
 
 ---
 
@@ -27,16 +26,16 @@ Simple RESTful API that analyzes strings and stores computed properties.
 - │ └── env.ts
 - ├── controllers/
 - │ └── strings.controller.ts
-- ├── json_store/
-- │ └── jsonStore.ts 
+- ├── models/
+- │ └── strings.model.ts 
+- ├── mongo_store/
+- │ └── mongoStore.ts 
 - ├── routers/
 - │ └── strings.router.ts
 - ├── services/
 - │ └── analyzer.ts 
 - │ └── nlParser.ts 
 - ├── index.ts 
-- data
-- │ └── strings.json
 - .gitignore
 - package-lock.json 
 - package.json 
@@ -82,26 +81,28 @@ npm start
 6. Dot Env
 7. TS Node
 8. Nodemon
+9. Mongoose
 
 ### How To Install Dependencies
 ```bash
-npm install express cors morgan express-rate-limit dotenv 
+npm install express cors morgan express-rate-limit dotenv mongoose
 
-npm install --save-dev @types/express @types/cors @types/morgan ts-node nodemon typescript
+npm install --save-dev @types/express @types/cors @types/morgan @types/mongoose ts-node nodemon typescript
 ```
 
 ---
 
 ### ENV
 - PORT=4060
-This is exported in /src/constants/env.ts as a constant
+- MONGODB_URI=xxyxyxyyxyyyx
+This is exported in /app/constants/env.ts as a constant
 
 ---
 
 ## API Documentation
 ### Base URL
 ```bash
-Prod: https://
+Prod: https://hng-string-analyzer-prod.up.railway.app/
 Dev: http://localhost:3000/
 ```
 
@@ -421,7 +422,7 @@ DELETE /strings/:string_value
 ```
 
 # Persistence
-- Strings are stored in `data/strings.json`, leveraging Node.JS filesystem
+- Strings are stored in a mongodb database
 
 
 # Notes and limitations
