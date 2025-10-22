@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import analyzer from '../services/analyzer';
 import nlParser from '../services/nlParser';
-import StringModel from '../models/strings.model';
 import mongoStore from '../mongo_store/mongoStore';
 
 export const addString = async (req: Request, res: Response) => {
@@ -19,9 +18,7 @@ export const addString = async (req: Request, res: Response) => {
   try {
     const existing = await mongoStore.getById(id);
     if (existing) {
-      return res
-        .status(409)
-        .json({ error: 'String already exists in the system' });
+      return res.status(409).json({ error: 'String already exists in the system' });
     }
 
     const record = {
@@ -36,9 +33,7 @@ export const addString = async (req: Request, res: Response) => {
   } catch (err: any) {
     // if duplicate key error from Mongo, return 409
     if (err?.code === 11000) {
-      return res
-        .status(409)
-        .json({ error: 'String already exists in the system' });
+      return res.status(409).json({ error: 'String already exists in the system' });
     }
     console.error(err);
     return res.status(500).json({ error: 'Internal Server Error' });
@@ -59,7 +54,7 @@ export const getString = async (req: Request, res: Response) => {
   if (!record) {
     return res.status(404).json({ error: 'String does not exist in the system' });
   }
-  return res.json(record);
+  return res.status(200).json(record);
 };
 
 export const getFilteredString = async (req: Request, res: Response) => {
@@ -82,27 +77,21 @@ export const getFilteredString = async (req: Request, res: Response) => {
   if (min_length !== undefined) {
     const v = Number(min_length);
     if (!Number.isInteger(v) || v < 0) {
-      return res
-        .status(400)
-        .json({ error: 'min_length must be a non-negative integer' });
+      return res.status(400).json({ error: 'min_length must be a non-negative integer' });
     }
     filters.min_length = v;
   }
   if (max_length !== undefined) {
     const v = Number(max_length);
     if (!Number.isInteger(v) || v < 0) {
-      return res
-        .status(400)
-        .json({ error: 'max_length must be a non-negative integer' });
+      return res.status(400).json({ error: 'max_length must be a non-negative integer' });
     }
     filters.max_length = v;
   }
   if (word_count !== undefined) {
     const v = Number(word_count);
     if (!Number.isInteger(v) || v < 0) {
-      return res
-        .status(400)
-        .json({ error: 'word_count must be a non-negative integer' });
+      return res.status(400).json({ error: 'word_count must be a non-negative integer' });
     }
     filters.word_count = v;
   }
@@ -138,7 +127,7 @@ export const getFilteredString = async (req: Request, res: Response) => {
     return true;
   });
 
-  return res.json({
+  return res.status(200).json({
     data,
     count: data.length,
     filters_applied: filters,
@@ -152,14 +141,10 @@ export const getStringByNaturalLanguage = async (req: Request, res: Response) =>
   }
   const interpreted = nlParser.parse(q);
   if (!interpreted) {
-    return res
-      .status(400)
-      .json({ error: 'Unable to parse natural language query' });
+    return res.status(400).json({ error: 'Unable to parse natural language query' });
   }
   if (interpreted.conflict) {
-    return res
-      .status(422)
-      .json({ error: 'Query parsed but resulted in conflicting filters' });
+    return res.status(422).json({ error: 'Query parsed but resulted in conflicting filters' });
   }
 
   // Build filters similar to GET /strings
@@ -189,7 +174,7 @@ export const getStringByNaturalLanguage = async (req: Request, res: Response) =>
     return true;
   });
 
-  return res.json({
+  return res.status(200).json({
     data,
     count: data.length,
     interpreted_query: {
@@ -202,7 +187,6 @@ export const getStringByNaturalLanguage = async (req: Request, res: Response) =>
 export const deleteString = async (req: Request, res: Response) => {
   const string_value = decodeURIComponent(req.params.string_value);
   const stringValue = string_value.toLowerCase();
-  console.log(stringValue);
   const id = analyzer.sha256(stringValue);
   const existing = await mongoStore.getById(id);
   if (!existing) {
