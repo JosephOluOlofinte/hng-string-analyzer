@@ -6,10 +6,12 @@ import mongoStore from '../mongo_store/mongoStore';
 export const addString = async (req: Request, res: Response) => {
   const { value } = req.body ?? {};
   if (value === undefined) {
-    return res.status(400).json({ error: 'Missing "value" field' });
+    return res
+      .status(400)
+      .json({ error: 'Invalid request body or missing \'value\' field' });
   }
   if (typeof value !== 'string') {
-    return res.status(422).json({ error: '"value" must be a string' });
+    return res.status(422).json({ error: '\'value\' must be a string' });
   }
 
   const props = analyzer.computeProperties(value.toLowerCase());
