@@ -11,7 +11,9 @@ export const addString = async (req: Request, res: Response) => {
       .json({ error: 'Invalid request body or missing \'value\' field' });
   }
   if (typeof value !== 'string') {
-    return res.status(422).json({ error: '\'value\' must be a string' });
+    return res
+      .status(422)
+      .json({ error: 'Invalid data type for \'value\' (must be string)' });
   }
 
   const props = analyzer.computeProperties(value.toLowerCase());
